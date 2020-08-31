@@ -270,20 +270,30 @@
   });
 
 
-  var goHere = function() {
+//   var goHere = function() {
 
-		$('.mouse-icon').on('click', function(event){
+// 		$('.mouse-icon').on('click', function(event){
 			
-			event.preventDefault();
+// 			event.preventDefault();
 
-			$('html,body').animate({
-				scrollTop: $('.goto-here').offset().top
-			}, 500, 'easeInOutExpo');
+// 			$('html,body').animate({
+// 				scrolled_id: $('.goto-here').offset().top
+// 			}, 500, 'easeInOutExpo');
 			
-			return false;
-		});
-	};
-	goHere();
+// 			return false;
+// 		});
+// 	};
+// 	goHere();
+
+
+	$('.mouse-icon').on('click',function(event){
+		var $anchor = $(this);
+		$('html, body').animate({
+		  scrollTop: $($anchor.attr('href')).offset().top	 -70
+		}, 500,'easeInOutExpo');
+		 event.preventDefault();
+	 });
+
 
 	// $("#myScrollspy").scrollspy({ offset: -75 });
 
